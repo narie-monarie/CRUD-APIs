@@ -2,7 +2,6 @@ package config
 
 import (
 	"narie-monarie/models"
-
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
