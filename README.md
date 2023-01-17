@@ -3,4 +3,5 @@
     - Java
     - Typescript
     - Go
+- All documentation will be found in the language's Folder
 
