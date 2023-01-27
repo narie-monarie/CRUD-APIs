@@ -14,6 +14,20 @@ const server = http.createServer((req, res) => {
     res.end()
   }
 
+  //returning json
+  if (req.method === 'GET' && req.url === '/course') {
+    res.writeHead(200, { 'Content-Type': 'application/json' })
+    const data = {
+      "name": "Learning Node.js",
+      "desc": "Building APIs with Node"
+    }
+
+    console.log(req.url)
+    res.end(JSON.stringify(data))
+
+  }
+
+
 })
 
 server.listen(3000, () => {
