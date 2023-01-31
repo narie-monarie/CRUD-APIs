@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 
 const main = async () => {
   //Queries
-  insert into course table
+  //  insert into course table
   const course = await prisma.course.create({
     data: {
       title: 'Learning Prisma with Nodejs',
@@ -48,3 +48,9 @@ main()
     await prisma.$disconnect()
     process.exit(1)
   })
+
+  //api/course GET
+  //api/course POST
+  //api/course PUT
+  //api/course/id GET
+  //api/course/id DELETE
