@@ -17,6 +17,18 @@ app.get('/api/courses', async (req, res) => {
 })
 
 app.post('/api/course', async (req, res) => {
+
+  //create new Instructor
+  const instructor = await prisma.instructor.create({
+    data: {
+      name: 'John Ondiek',
+      zip: '00208',
+      city: 'Chutiya',
+      country: 'India',
+      email: 'johnondiek2@gmail.com',
+    }
+  })
+  //create new course
   const enterCourse = await prisma.course.create({
     data: {
       title: 'Learn Golang',
@@ -24,7 +36,7 @@ app.post('/api/course', async (req, res) => {
       duration: 12.4,
       Instructor: {
         connect: {
-          Id: 1,
+          Id: instructor.Id,
         }
       }
     }
