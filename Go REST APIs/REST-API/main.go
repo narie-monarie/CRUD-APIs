@@ -1,7 +1,13 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"narie/monarie/config"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	r := gin.Default()
+	router := gin.New()
+	config.Connect()
+	router.run(":8080")
 }
